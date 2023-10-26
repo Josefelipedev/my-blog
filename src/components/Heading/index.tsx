@@ -9,11 +9,10 @@ export type HeadingProps = {
 };
 
 export const Heading = ({
-  children,
-  colorDark = true,
-  as = 'h1',
-  size = 'huge',
-  uppercase = false,
+children,
+colorDark = true,
+as = 'h1',
+size = 'huge', uppercase = false,
 }: HeadingProps) => {
   return (
     <Styled.Title
