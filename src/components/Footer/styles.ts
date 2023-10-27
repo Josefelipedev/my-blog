@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Container as TextComponent } from '../TextComponent/styles';
+import { Container as TextComponent } from '../HtmlContent/styles';
 
 export const Container = styled.footer`
   ${({ theme }) => css`
