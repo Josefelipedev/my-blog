@@ -113,7 +113,7 @@ export default {
     },
   ],
 
-  blogName: 'José Felipe - Blog de programa',
+  blogName: 'Zé ',
 
-  logo: '/assets/images/otavio-miranda.png',
+  logo: '/assets/images/logo.jpeg',
 } as MenuProps;

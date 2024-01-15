@@ -1,8 +1,9 @@
-import { type } from 'os';
 import * as Styled from './styled';
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu';
+import { Close as CloseIcon } from '@styled-icons/material-outlined/Close';
 import { LogoLink } from 'components/LogoLink';
 import { MenuLink } from 'components/MenuLink';
+import { useState } from 'react';
 
 export type MenuPropsLinks = {
   id: string;
@@ -18,16 +19,27 @@ export type MenuProps = {
 };
 
 export const Menu = ({ links, blogName, logo }: MenuProps) => {
+  const [menuVisible, setMenuVisible] = useState(false);
+
+  const handleMenuClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+    setMenuVisible((prevState) => !prevState);
+  };
+
   return (
     <>
       <Styled.OpenClose
         href="#"
         aria-label="Open or close menu"
         title="Open or close menu"
+        menuVisible={menuVisible}
+        onClick={handleMenuClick}
       >
-        <MenuIcon aria-label="Open Menu" />
+        {menuVisible && <CloseIcon aria-label="Close Menu" />}
+
+        {!menuVisible && <MenuIcon aria-label="Open Menu" />}
       </Styled.OpenClose>
-      <Styled.Wrapper>
+      <Styled.Wrapper menuVisible={menuVisible}>
         <Styled.Nav>
           <Styled.Logo>
             <LogoLink link="/" text={blogName} srcImg={logo} />
