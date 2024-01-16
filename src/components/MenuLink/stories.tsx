@@ -1,6 +1,6 @@
-import {Meta, Story} from '@storybook/react/types-6-0';
-import {MenuLink, MenuLinkProps} from '.';
-import {theme} from "../../styles/theme";
+import { Meta, Story } from '@storybook/react/types-6-0';
+import { MenuLink, MenuLinkProps } from '.';
+import { theme } from '../../styles/theme';
 
 export default {
   title: 'MenuLink',
@@ -10,7 +10,7 @@ export default {
     link: 'https://www.google.com.br/',
   },
   argTypes: {
-    children: {type: 'string'},
+    children: { type: 'string' },
   },
   parameters: {
     backgrounds: {
