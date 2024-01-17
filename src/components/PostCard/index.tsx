@@ -6,6 +6,7 @@ import { Heading } from '../Heading';
 import { StrapiImage } from '../../shared-typed/strapi-image';
 
 export type PostCardProps = {
+  id: string;
   title: string;
   cover: StrapiImage;
   excerpt: string;
@@ -16,7 +17,6 @@ export const PostCard = ({ title, cover, excerpt, slug }: PostCardProps) => {
   return (
     <>
       <Styled.Wrapper>
-        <h1>Oi</h1>
         <p>{title}</p>
         <Link href={`/posts/${slug}`}>
           <a>
