@@ -19,4 +19,9 @@ describe('<PostTags />', () => {
 
     expect(container).toMatchSnapshot();
   });
+  it('should not render if there are no tags', () => {
+    const { container } = renderTheme(<PostTags {...props} tags={undefined} />);
+
+    expect(container).toMatchSnapshot();
+  });
 });
