@@ -1,30 +1,22 @@
 import { screen } from '@testing-library/react';
 import { renderTheme } from '../../styles/render-theme';
-import { PostGrid, PostGridProps } from '.';
+import { PostTags, PostTagsProps } from '.';
 
 import mock from './mock';
 
-const props: PostGridProps = mock;
+const props: PostTagsProps = mock;
 
-describe('<PostGrid />', () => {
-  it('should not render posts', () => {
-    renderTheme(<PostGrid {...props} posts={undefined} />);
+describe('<PostTags />', () => {
+  it('should render two tags', () => {
+    renderTheme(<PostTags {...props} />);
 
-    expect(screen.getByText(/Nenhum post/i)).toBeInTheDocument();
+    expect(screen.getByText(/Tags:/i)).toBeInTheDocument();
+    expect(screen.getAllByRole('link')).toHaveLength(2);
   });
 
-  it('should render three posts', () => {
-    const { container } = renderTheme(<PostGrid {...props} />);
+  it('should should match snapshot', () => {
+    const { container } = renderTheme(<PostTags {...props} />);
 
-    expect(screen.queryByText(/Nenhum post/i)).not.toBeInTheDocument();
-
-    expect(screen.getAllByRole('heading')).toHaveLength(3);
-    expect(screen.getAllByRole('img')).toHaveLength(3);
-    expect(container.querySelectorAll('p')).toHaveLength(3);
-  });
-
-  it('should match snapshot', () => {
-    const { container } = renderTheme(<PostGrid {...props} />);
     expect(container).toMatchSnapshot();
   });
 });

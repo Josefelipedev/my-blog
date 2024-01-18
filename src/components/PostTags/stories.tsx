@@ -8,7 +8,7 @@ export default {
   component: PostTags,
   args: mock,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'padded',
   },
 } as Meta<PostTagsProps>;
 
