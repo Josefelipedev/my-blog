@@ -4,6 +4,7 @@ import { Menu } from '../../components/Menu';
 import { HeaderContainer } from './styles';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
+import { GoTop } from '../../components/GoTop';
 
 export type BaseTemplateProps = {
   settings: SettingsStrapi;
@@ -32,6 +33,7 @@ export const BaseTemplate = ({ children, settings }: BaseTemplateProps) => {
       <Styled.FooterContainer>
         <Footer footerHtml={settings.text} />
       </Styled.FooterContainer>
+      <GoTop />
     </Styled.Wrapper>
   );
 };
