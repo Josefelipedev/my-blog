@@ -1,7 +1,6 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import mock from './mock';
 import { PostTemplate, PostTemplateProps } from './index';
-import { PostTags } from '../../components/PostTags';
 
 export default {
   title: 'PostTemplate',
